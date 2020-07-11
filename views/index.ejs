@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<html lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <meta charset="UTF-8">
+    
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="pt-br">
+    
+        <title><%= title%></title>
+    
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="./stylesheets/arquivos/bootstrap.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="./stylesheets/arquivos/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="./stylesheets/arquivos/ionicons.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="./stylesheets/arquivos/AdminLTE.css">
+        <link rel="stylesheet" href="./stylesheets/arquivos/upf_custom.css">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="./stylesheets/arquivos/blue.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- jQuery 2.1.4 -->
+        <script src="./arquivos/jquery-2.1.4.min.js.download"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="./arquivos/bootstrap.min.js.download"></script>
+        <!-- iCheck -->
+        <script src="./arquivos/icheck.min.js.download"></script>
+
+    </head>
+    <body class="hold-transition login-page">
+        <div class="container">
+            <div class="login-box">
+                <div class="login-logo">
+                    <h1>
+                        <img src="./images/cfplogo.png" alt="Logo CFP">
+                    </h1>
+                </div>
+                <!-- /.login-logo -->
+                <div>        
+                    <form class="form-horizontal text-align-left" action="./main.html" method="post" enctype="multipart/form-data">
+                                  
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h1 class="box-title">Acesso</h1>
+                        </div>
+         
+                        <div class="box-body padding-0">
+                            <div class="form-item">
+                                <label for="f_usuario">
+                                    Usuario
+                                </label>                        
+                                <input id="f_usuario" class="form-control" name="f_usuario" type="text" maxlength="250" aria-label="Digite seu usuario" placeholder="Digite seu usuario..." autofocus="">
+                                <span class="fa fa-refresh fa-spin position-input-loader display-none"></span>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-item">
+                                <label for="f_senha">
+                                    Senha
+                                </label>
+                        
+                                <input id="f_senha" class="form-control" name="f_senha" type="password" maxlength="250" aria-label="Digite sua senha" placeholder="Digite sua senha...">
+                        
+                                <span class="fa fa-refresh fa-spin position-input-loader display-none"></span>
+                                <!--
+                                    <div class="error-message"></div>
+                                        <p><a href="mailto:informacoes@upf.br">informacoes@upf.br</a></p>
+                                        <p><a href="tel:+55-54-3316-7000" style="font-size: 12px;">(54) 3316-7000</a></p>
+                                        <div class="alert alert-error alert-dismissible margin-top-20 margin-bottom-0" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Clique aqui para fechar">
+                                            <span aria-hidden="true">�</span></button>
+                                            Senha incorreta! Tente novamente.                           
+                                        </div>
+                                -->
+                            </div>
+                        </div>
+                                                    <!-- background-color-light-gray -->
+                        <div class="box-footer ">                     
+                            <div class="right">                        
+                                <a href="/main" class="btn btn-primary margin-left-10"> Entrar </a>
+                                     <!-- <button type="submit" class="btn btn-primary margin-left-10" aria-label="Clique aqui para entrar na intranet">
+                                        // <span class="fa fa-sign-in margin-right-10"></span>
+                                        Entrar 
+                                    </button> 
+                                    -->                                
+                            </div>                  
+                        </div>
+                    </div>
+                    </form>
+                </div><!-- /.login-box-body -->        
+        
+                <div class="text-center margin-top-20 margin-bottom-120">
+                    <a href="/main">Esqueci a senha</a>.<br>        
+                </div>
+
+            </div><!-- /.login-box -->
+        </div>
+
+    </body>
 </html>

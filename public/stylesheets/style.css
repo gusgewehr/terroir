@@ -1,8 +1,103 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  background-color: #f9f9f9;
 }
 
-a {
-  color: #00B7FF;
+.principal {
+    margin-top: 15%;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px #b4b4b4;
+    border-image-source: linear-gradient( 90deg, #16d9ac, #178bea);
+    border-image-slice: 20;
+    padding: 5%;
+  }
+
+.principal h3 {
+  padding-left: 32%;
 }
+
+.divisor {
+  margin: 12px 0 0 0px;
+  width: 1px;
+  height: 48px;
+  border-right: 1px solid #ddd;
+}
+
+.topo {  
+  background-color: #fff;
+  display: flex;
+  height: 80px;
+  line-height: 70px;
+  padding: 0;
+  font-size: 16px;
+  position: relative;
+  border-top: 10px solid;
+  border-image-source: linear-gradient(90deg,#16d9ac,#178bea);
+  border-image-slice: 20;
+  box-shadow: 1px 0px 10px #b4b4b4;
+  
+}
+
+
+
+.meu_container {
+  margin: 0%;
+  
+}
+
+.logo_menu {
+  height: 46px;
+  vertical-align: middle;
+  
+}
+
+.menu {
+  padding: 0 20px;
+}
+
+
+.menu_vertical a{
+  height: 80px;  
+  border-right: 10px solid;
+  border-image-source: linear-gradient( 0deg, #16d9ac, #178bea);
+  border-image-slice: 20;
+
+}
+
+.menu_vertical a:hover{
+  border-bottom: 2px solid; 
+  border-left:2px solid;
+  border-top: 2px solid;
+  border-right: 10px solid;
+  border-image-source: linear-gradient( 0deg, #16d9ac, #178bea);
+  border-image-slice: 20;
+  box-shadow: 1px 0px 10px #b4b4b4;
+
+}
+
+
+.menu_vertical li{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #178bea ;
+  padding-left: 30px ;
+}
+
+
+
+#my-navbar-collapse {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 1;
+  width: 280px; /*example + never use min-width with this solution */
+  height: 100%;
+  background-color: #fff;
+  line-height: 70px;
+  font-size: 16px;  
+  box-shadow: 1px 0px 10px #b4b4b4;
+}
+
