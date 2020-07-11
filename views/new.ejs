@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CRUD de Clientes</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-</head>
-<body>
-    <h1><%= title %></h1>
+<%- contentFor('pageSection') %>
     <p>Preencha os dados abaixo para salvar o cliente.</p>
     <form action="/new" method="POST">
         <p>
@@ -25,8 +18,6 @@
             </label>
         </p>
         <p>
-            <a href="/">Cancelar</a> | <input type="submit" value="Salvar" />
+            <a href="/main">Cancelar</a> | <input type="submit" value="Salvar" />
         </p>
     </form>
-</body>
-</html>
