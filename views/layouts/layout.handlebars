@@ -24,19 +24,19 @@
         </div> 
         <div class="collapse menu_vertical" id="my-navbar-collapse"> 
             <ul class="navbar-nav mr-auto">
-                <a href="#" ><li>Lançamento</li></a>
-                <a href="#"><li>Painel</li></a>
-                <a href="#"><li>Metas</li></a>
+                <a href="./main" ><li>Início</li></a>
+                <a href="./new"><li>Cadastro de Clientes</li></a>
+                <a href="#"><li>Cadastro de Produtos</li></a>
                           
             </ul>           
         </div>    
 
         <div class="container">            
             <div class="row d-flex justify-content-center">                
-                <div class="col-lg-10">                        
+                <div class="col-12 ">                        
                     <div class="principal">
-
-                        <%- pageSection %>
+                        {{>_msg}}
+                        {{{body}}}
                         
                     </div>  
                 </div>           
