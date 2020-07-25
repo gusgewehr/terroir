@@ -14,7 +14,6 @@ var usersRouter = require('./routes/users');
 var newRouter = require('./routes/new');
 var pessoaRouter = require('./routes/post/pessoa')
 var mainRouter = require('./routes/main');
-var pesquisapessoaRouter = require('./routes/post/pesquisapessoa')
 
 var app = express();
 
@@ -62,8 +61,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/new', newRouter);
 app.use('/main', mainRouter);
-app.use('/criar-pessoa', pessoaRouter);
-app.use('/pesquisa-pessoa', pesquisapessoaRouter);
+app.use('/pessoa', pessoaRouter);
+
 
 
 

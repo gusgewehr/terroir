@@ -1,33 +1,49 @@
-{{#each erros}}
-    <div class="alert alert-danger">{{texto}}</div>
-{{else}}
-{{/each}}
-    <h2>Cadastro de cliente.</h2>
-    <form  action="/criar-pessoa" method="POST">
-        <label for="nome">Nome Completo*</label>
-        <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o nome completo do cliente">
-        <br>        
-        <label for="Telefone">Telefone</label>
-        <input type="text" name="telefone" class="form-control" id="tel" placeholder="Digite o telefone do cliente">
-        <br>        
-        <label for="Endereco">Endereço*</label>
-        <input type="text" name="endereco" class="form-control" id="endereco" placeholder="Digite o endereço completo do cliente">
-        <br>          
-        <label for="cpf">CPF ou CNPJ</label>
-        <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite o CPF do cliente">
-        <br>   
-        <div class="form-group row float-right" >          
-            <div>                                        
-                <div class="button  ml-2 mr-3">
-                    <button class="btn btn-success" type="submit">Gravar</button>
+    <div class="row">
+        <div class="col-12">
+            {{#each erros}}
+                <div class="alert alert-danger">{{texto}}</div>
+                {{else}}
+            {{/each}}
+        </div>
+    </div>
+    <div class"row">
+        <div class="col-12">       
+        <h2>Cadastro de cliente.</h2>
+        <form  action="/pessoa" method="POST" >
+            <div class="form-group">
+                <input type="hidden" name="id" value="{{pessoa._id}}">
+                <label for="nome" class="">Nome Completo*</label>
+                <input type="text" name="nome" class="form-control" id="nome"  placeholder="Digite o nome completo do cliente" value="{{pessoa.nome}}">
+            </div> 
+            <div class="form-group">      
+                <label for="Telefone">Telefone</label>
+                <input type="text" name="telefone" class="form-control" id="tel" placeholder="Digite o telefone do cliente" value="{{pessoa.telefone}}">
+            </div>
+            <div class="form-group">        
+                <label for="Endereco">Endereço*</label>
+                <input type="text" name="endereco" class="form-control" id="endereco" placeholder="Digite o endereço completo do cliente" value="{{pessoa.endereco}}">
+            </div>
+            <div class="form-group">         
+                <label for="cpf">CPF ou CNPJ</label>
+                <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite o CPF do cliente" value="{{pessoa.cpf}}">
+            </div> 
+            
+            <div class="form-group row" >
+                <div class="col-9 "></div>
+                <div class="col-2 text-right">                         
+                    <div class="button">
+                        <button formaction="/pessoa/pesquisa" class="button btn btn-info" type="submit" >Pesquisar</button>
+                    </div>
+                </div>          
+                <div class="col-1 pl-0">                                        
+                    <div class="button">
+                        <button class="btn btn-success" type="submit" >Gravar</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
-    <a href="/pesquisa-pessoa"  class="button btn btn-info">                                                          
-        Pesquisar                
-    </a>
-    <br>
+        </form>
+        </div>     
+    </div>    
 {{#if pessoas}}
         <div class="card">
             <div class="card-body">
@@ -38,6 +54,7 @@
                             <th scope="col">Telefone</th>
                             <th scope="col">Endereço</th>
                             <th scope="col">CPF</th>
+                            <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,12 +64,45 @@
                             <td>{{telefone}}</td>
                             <td>{{endereco}}</td>
                             <td>{{cpf}}</td>
-                        </tr>                    
+                            <td>
+                                <a href="/pessoa/editar/{{_id}}" class="btn btn-outline-secondary btn-sm">
+                                    Editar
+                                </a>                                         
+                                <button class="btn btn-outline-danger btn-sm ml-1" data-toggle="modal" data-target="#delete-cat-{{@index}}">Deletar</button>
+                            </td>
+                        </tr>
+                        <!--▓▓▓▓▒▒▒░░░ Janela modal ░░░▒▒▒▓▓▓-->
+                        
+                        <div class="modal fade" id="delete-cat-{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Deletar Pessoa</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Tem certeza que deseja deletar esta pessoa?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form action="/pessoa/deletar" method="POST">
+                                        <input type="hidden" name="id" value="{{_id}}">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-danger">Deletar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                   
     {{else}}
-
+    <h4>Nenhuma pessoa cadastrada</h4>   
     {{/each}}
                     </tbody>
                 </table>
             </div>
-        </div>    
+        </div> 
+        
 {{/if}}
+

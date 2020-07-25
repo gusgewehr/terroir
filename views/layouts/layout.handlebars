@@ -18,22 +18,22 @@
     <body>
         <div class="meu_container topo">
             <button class="menu navbar-toggler" type="button" data-toggle="collapse" data-target="#my-navbar-collapse">
-                <img class="logo_menu" src="./images/menu redondo.png">
+                <img class="logo_menu" src="/images/menu redondo.png">
             </button>
             <span class="divisor"></span>   
         </div> 
         <div class="collapse menu_vertical" id="my-navbar-collapse"> 
             <ul class="navbar-nav mr-auto">
-                <a href="./main" ><li>Início</li></a>
-                <a href="./new"><li>Cadastro de Clientes</li></a>
-                <a href="#"><li>Cadastro de Produtos</li></a>
+                <a href="../../main" ><li>Pedidos</li></a>
+                <a href="../../new"><li>Clientes</li></a>
+                <a href="#"><li>Produtos</li></a>
                           
             </ul>           
         </div>    
 
-        <div class="container">            
-            <div class="row d-flex justify-content-center">                
-                <div class="col-12 ">                        
+        <div class="container-fluid">            
+            <div class="d-flex justify-content-center" style="height: 100%;">                
+                <div class="col-11">                        
                     <div class="principal">
                         {{>_msg}}
                         {{{body}}}

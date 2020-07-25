@@ -1,13 +1,24 @@
+html {
+  height: 100%;
+  width:  100%;
+}
+
 body{
   background-color: #f9f9f9;
+  height: 100%;
+  width: 100%;
 }
 
 .card {
   width: 100%;
 }
 
+.container-fluid{
+  height: 100%;
+}
+
 .principal {
-    margin-top: 15%;
+    margin-top: 100px;
     border-radius: 3px;
     background: #ffffff;
     border-top: 3px solid;
@@ -16,12 +27,8 @@ body{
     box-shadow: 0 1px 1px #b4b4b4;
     border-image-source: linear-gradient( 90deg, #16d9ac, #178bea);
     border-image-slice: 20;
-    padding: 5%;
+    padding: 15px 50px 15px 50px;
   }
-
-.principal h3 {
-  padding-left: 32%;
-}
 
 .divisor {
   margin: 12px 0 0 0px;
@@ -41,11 +48,8 @@ body{
   border-top: 10px solid;
   border-image-source: linear-gradient(90deg,#16d9ac,#178bea);
   border-image-slice: 20;
-  box-shadow: 1px 0px 10px #b4b4b4;
-  
+  box-shadow: 1px 0px 10px #b4b4b4;  
 }
-
-
 
 .meu_container {
   margin: 0%;
