@@ -12,7 +12,8 @@ const handlebars = require ('express-handlebars');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var newRouter = require('./routes/new');
-var pessoaRouter = require('./routes/post/pessoa')
+var pessoaRouter = require('./routes/post/pessoa');
+var produtoRouter = require('./routes/produto');
 var mainRouter = require('./routes/main');
 
 var app = express();
@@ -62,6 +63,7 @@ app.use('/users', usersRouter);
 app.use('/new', newRouter);
 app.use('/main', mainRouter);
 app.use('/pessoa', pessoaRouter);
+app.use('/produto', produtoRouter);
 
 
 

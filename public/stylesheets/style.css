@@ -9,6 +9,11 @@ body{
   width: 100%;
 }
 
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
 .card {
   width: 100%;
 }

@@ -8,31 +8,31 @@
     </div>
     <div class"row">
         <div class="col-12">       
-        <h2>Cadastro de cliente.</h2>
-        <form  action="/pessoa" method="POST" >
+        <h2>Cadastro de produto.</h2>
+        <form  action="/produto/novo" method="POST" >
             <div class="form-group">
-                <input type="hidden" name="id" value="{{pessoa._id}}">
-                <label for="nome" class="">Nome Completo*</label>
-                <input type="text" name="nome" class="form-control" id="nome"  placeholder="Digite o nome completo do cliente" value="{{pessoa.nome}}">
+                <input type="hidden" name="id" value="{{produto._id}}">
+                <label for="nome" >Descrição*</label>
+                <input type="text" name="descricao" class="form-control" placeholder="Digite a descrição do produto" value="{{produto.descricao}}">
             </div> 
             <div class="form-group">      
-                <label for="Telefone">Telefone</label>
-                <input type="tel" name="telefone" class="form-control" id="tel" placeholder="Digite o telefone do cliente" value="{{pessoa.telefone}}">
+                <label for="Telefone">Informações</label>
+                <input type="text" name="info" class="form-control" placeholder="Digite as informações do produto" value="{{produto.informacoes}}">
             </div>
             <div class="form-group">        
-                <label for="Endereco">Endereço*</label>
-                <input type="text" name="endereco" class="form-control" id="endereco" placeholder="Digite o endereço completo do cliente" value="{{pessoa.endereco}}">
+                <label for="Endereco">Ingredientes</label>
+                <input type="text" name="ingredientes" class="form-control" placeholder="Digite os ingredientes do produto" value="{{produto.ingredientes}}">
             </div>
             <div class="form-group">         
-                <label for="cpf">CPF ou CNPJ</label>
-                <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite o CPF do cliente" value="{{pessoa.cpf}}">
+                <label for="cpf">Valor*</label>
+                <input type="number" name="valor" class="form-control" placeholder="Digite o valor do produto" value="{{produto.valor}}">
             </div> 
             
             <div class="form-group row" >
                 <div class="col-9 "></div>
                 <div class="col-2 text-right">                         
                     <div class="button">
-                        <button formaction="/pessoa/pesquisa" class="button btn btn-info" type="submit" >Pesquisar</button>
+                        <button formaction="/produto/pesquisa" class="button btn btn-info" type="submit" >Pesquisar</button>
                     </div>
                 </div>          
                 <div class="col-1 pl-0">                                        
@@ -44,28 +44,28 @@
         </form>
         </div>     
     </div>    
-{{#if pessoas}}
+{{#if produtos}}
         <div class="card">
             <div class="card-body">
                 <table class="table table-striped" >
                     <thead>
                         <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Telefone</th>
-                            <th scope="col">Endereço</th>
-                            <th scope="col">CPF</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Informações</th>
+                            <th scope="col">Ingredientes</th>
+                            <th scope="col">Valor</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-    {{#each pessoas}} 
+    {{#each produtos}} 
                         <tr>
-                            <td>{{nome}}</td>
-                            <td>{{telefone}}</td>
-                            <td>{{endereco}}</td>
-                            <td>{{cpf}}</td>
-                            <td>
-                                <a href="/pessoa/editar/{{_id}}" class="btn btn-outline-secondary btn-sm">
+                            <td ><p>{{descricao}}</p></td>
+                            <td >{{informacoes}}</td>
+                            <td >{{ingredientes}}</td>
+                            <td >{{valor}}</td>
+                            <td > 
+                                <a href="editar/{{_id}}" class="btn btn-outline-secondary btn-sm">
                                     Editar
                                 </a>                                         
                                 <button class="btn btn-outline-danger btn-sm ml-1" data-toggle="modal" data-target="#delete-cat-{{@index}}">Deletar</button>
@@ -77,16 +77,16 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Deletar Pessoa</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Deletar Produto</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Tem certeza que deseja deletar esta pessoa?
+                                        Tem certeza que deseja deletar este produto?
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="/pessoa/deletar" method="POST">
+                                        <form action="/produto/deletar" method="POST">
                                         <input type="hidden" name="id" value="{{_id}}">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                         <button type="submit" class="btn btn-danger">Deletar</button>
@@ -97,12 +97,15 @@
                             </div>
                    
     {{else}}
-    <h4>Nenhuma pessoa cadastrada</h4>   
+     
     {{/each}}
                     </tbody>
                 </table>
             </div>
-        </div> 
+        </div>
+
+    {{else}}
+    <h4>Nenhum produto cadastrado</h4>   
         
 {{/if}}
 
